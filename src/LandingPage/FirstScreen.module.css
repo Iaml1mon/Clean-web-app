@@ -1,0 +1,341 @@
+:root {
+  --black: #000;
+  --white: #fff;
+
+  --blue-100: #1a78f2;
+  --blue-90: #6896d1;
+
+  --neutral-100: #12153a;
+  --neutral-200: #2b3641;
+  --neutral-300: #4f6071;
+  --neutral-400: #677582;
+  --neutral-500: #88939d;
+
+  --gray-600: #9fa7af;
+  --gray-700: #bcc2c8;
+  --gray-800: #d3d8dd;
+  --gray-900: #eaeef3;
+  --gray-950: #f4f7f9;
+
+  --transition-300: all 300ms ease;
+  --transition-500: all 500ms ease;
+}
+
+.firstScreenSection {
+  width: 100%;
+  height: 100vh;
+  background-image: url("./landingResources/firstScreen-illustration.png");
+  background-repeat: no-repeat;
+  background-position: bottom;
+  background-size: contain;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+
+  position: relative;
+}
+
+.header {
+  width: 100%;
+  padding: 1rem 3rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 1;
+  /* box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px; */
+}
+
+.mainLogo {
+  transition: var(--transition-300);
+  animation: slideRight 0.7s;
+}
+
+.mainLogo img {
+  width: 5.5rem;
+}
+
+.header nav {
+  width: 35rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  animation: slideDown 0.7s;
+}
+
+.navLinks {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navLinks a {
+  color: var(--black);
+  font-weight: 500;
+}
+.navLink:hover {
+  transform: scale(1.1);
+}
+
+.loginButtonLink {
+  padding: 0.5rem 1.5rem;
+  border-radius: 15px;
+  border: 2px solid var(--blue-100);
+}
+.loginButtonLink a {
+  color: var(--blue-100);
+  transition: var(--transition-300);
+}
+
+.navBars {
+  background: none;
+  border: none;
+  outline: none;
+  display: none;
+  transition: var(--transition-300);
+}
+
+.bookingContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem 1rem;
+  width: 100%;
+  height: 100%;
+  gap: 2rem;
+  z-index: 1;
+}
+
+.bookingContainer h2:first-of-type {
+  text-align: center;
+  font-size: 2.5rem;
+  color: var(--neutral-100);
+
+  animation: slideDown 0.7s;
+  /* font-weight: bold; */
+}
+
+.bookingBar {
+  width: 50rem;
+  height: 4rem;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  background-color: var(--white);
+  z-index: 100;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  cursor: pointer;
+  animation: slideUp 0.7s;
+}
+
+.bookingItem {
+  width: 25%;
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  border-radius: 20px;
+  z-index: 90;
+  cursor: pointer;
+  /* border-left: 1px solid var(--neutral-500); */
+}
+.bookingItem:hover {
+  border: 2px solid var(--blue-100);
+}
+
+.bookingItem > p:first-of-type {
+  width: 12rem;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 0 1rem;
+  align-items: center;
+  color: var(--neutral-300);
+}
+
+.bookingItem > p:first-of-type .icon {
+  font-size: 0.3rem;
+}
+
+.bookingChoices {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 40%;
+  /* padding: 0 1rem; */
+  position: absolute;
+  top: 101%;
+  z-index: 50;
+  transition: var(--transition-300);
+  background-color: var(--white);
+  border-radius: 5px;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  display: none;
+}
+
+.bookingChoices span {
+  padding-left: 0.5rem;
+  font-size: 0.85rem;
+  height: 3rem;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  width: 100%;
+  border-radius: 5px;
+  transition: var(--transition-300);
+  /* height: 100%; */
+}
+
+.bookingChoices span:hover {
+  background-color: var(--gray-600);
+  padding-left: 0.7rem;
+}
+
+.bookingBar > a:last-child {
+  width: 25%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  outline: none;
+  border-radius: 20px;
+  background-color: var(--blue-100);
+  color: var(--white);
+  font-weight: 500;
+  transition: var(--transition-300);
+}
+
+.bookingBar > a:last-child:hover {
+  background-color: var(--blue-90);
+}
+
+@keyframes slideDown {
+  0% {
+    transform: translateY(-2rem);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  0% {
+    transform: translateY(3rem);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+@keyframes slideRight {
+  0% {
+    transform: translateX(-2rem);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+@keyframes slideLeft {
+  0% {
+    transform: translateX(3rem);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@media (max-width: 992px) {
+}
+
+@media (max-width: 820px) {
+  .navLinks {
+    justify-content: flex-end;
+    gap: 2rem;
+  }
+  .navLink {
+    display: none;
+  }
+
+  .loginButtonLink {
+    display: flex;
+  }
+
+  .navBars {
+    display: block;
+    cursor: pointer;
+  }
+  .bookingBar {
+    width: 70%;
+  }
+  .bookingItem {
+    display: none;
+  }
+
+  .bookingBar > a:last-of-type {
+    width: 100%;
+  }
+  .bookingContainer h2:first-of-type {
+    font-size: 2.3rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .firstScreenSection {
+    background-image: url("./landingResources/firstScreen-illustration-mobile.png");
+  }
+  .header {
+    width: 100%;
+    padding: 1rem 2rem;
+  }
+  .bookingContainer {
+    justify-content: flex-start;
+    padding-top: 5rem;
+  }
+
+  .bookingBar {
+    width: 85%;
+  }
+
+  .bookingContainer h2:first-of-type {
+    font-size: 2.15rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .bookingBar {
+    width: 95%;
+  }
+
+  .bookingContainer h2:first-of-type {
+    font-size: 2rem;
+  }
+}
+@media (max-width: 480px) {
+  .firstScreenSection {
+    height: 85vh;
+  }
+}

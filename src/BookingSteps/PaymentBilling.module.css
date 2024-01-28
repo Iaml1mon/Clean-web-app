@@ -1,0 +1,499 @@
+:root {
+  --black: #000;
+  --white: #fff;
+
+  --blue-100: #1a78f2;
+  --blue-90: #6896d1;
+  --blue-80: #afbbff7c;
+
+  --neutral-100: #12153a;
+  --neutral-200: #2b3641;
+  --neutral-300: #4f6071;
+  --neutral-400: #677582;
+  --neutral-500: #88939d;
+
+  --gray-600: #9fa7af;
+  --gray-700: #bcc2c8;
+  --gray-800: #d3d8dd;
+  --gray-900: #eaeef3;
+  --gray-950: #f4f7f9;
+
+  --warningRed: rgb(255, 46, 46);
+
+  --transition-300: all 300ms ease;
+  --transition-500: all 500ms ease;
+}
+
+.paymentBilling {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  grid-template-rows: 1fr;
+  height: 87.5vh;
+  width: 100%;
+  gap: 1rem;
+  /* color: #02c402e1; */
+}
+
+.paymentDetails {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  width: 100%;
+  padding: 2rem 1rem;
+  gap: 1rem;
+  animation: slideUp 400ms ease;
+}
+
+.paymentDetails > h2:first-child {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+  animation: slideDown 500ms ease;
+}
+
+.paymentDetailsContainer {
+  width: 80%;
+  min-height: 17rem;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: repeat(4, 1fr);
+  gap: 1rem;
+}
+.paymentDetailsContainerInput {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  position: relative;
+  margin: 0 0.1rem;
+}
+.paymentDetailsContainerInput label {
+  font-size: 0.7rem;
+}
+.paymentDetailsContainerInput input {
+  font-size: 0.9rem;
+  padding-left: 0.5rem;
+  padding-right: 1.5rem;
+  width: 100%;
+  height: 3rem;
+  border-radius: 10px;
+  border: 2px solid var(--gray-800);
+  outline: none;
+}
+
+.paymentDetailsContainerInput > span:last-of-type {
+  position: absolute;
+  font-size: 0.65rem;
+  top: 100%;
+  animation: slideDown 300ms;
+  font-weight: 500;
+  /* color: var(--warningRed); */
+}
+.paymentDetailsContainerInput input:focus {
+  border-color: var(--blue-100);
+}
+
+.creditCardInformations {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+}
+
+.fullNameEmailContainer {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr;
+}
+
+.phoneNumberContactWaysContainer {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.contactWaysContainer {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1rem 1fr;
+  margin: 0 0.1rem;
+  /* grid-template-columns: 1fr 1fr 1fr;
+  column-gap: 0.1rem;
+  align-items: flex-end;
+  margin: 0 0.1rem; */
+}
+.contactWaysContainer > span:first-of-type {
+  font-size: 0.7rem;
+}
+.contactWaysContainer .container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  column-gap: 0.3rem;
+}
+
+.contactWaysContainer button {
+  height: 3rem;
+  border-radius: 10px;
+  border: 2px solid var(--gray-800);
+  background: none;
+  cursor: pointer;
+  transition: var(--transition-300);
+}
+.contactWaysContainer button:hover {
+  border-color: var(--blue-100);
+  color: var(--blue-100);
+  transform: translateY(-0.1rem);
+}
+
+.passwordContainer {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.passwordContainer .passwordShow {
+  position: absolute;
+  width: 1rem;
+
+  background: none;
+  border: none;
+  cursor: pointer;
+  right: 0.5rem;
+  top: 1.75rem;
+}
+.billingDetails {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  background-color: var(--gray-950);
+  padding: 2rem;
+  overflow-y: scroll;
+  animation: slideRight 400ms ease;
+  padding-bottom: 3rem;
+}
+.billingDetails > h2:first-of-type {
+  font-size: 1.4rem;
+}
+
+.billingDetailsContainer {
+  width: 100%;
+
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 14rem 4rem 13rem 6rem;
+  gap: 1rem;
+}
+
+.billingDetailsContainer::-webkit-scrollbar {
+  background-color: var(--gray-800);
+  border-radius: 10px;
+  width: 10px;
+}
+.billingDetailsContainer::-webkit-scrollbar-thumb {
+  background-color: var(--blue-100);
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+.billingDetailsContainer > button:last-of-type {
+  width: 100%;
+  height: 3rem;
+  border-radius: 10px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  background-color: var(--blue-100);
+  color: var(--white);
+  font-size: 0.8rem;
+  transition: var(--transition-300);
+  align-self: center;
+}
+
+.generalInformationsContainer {
+  border-radius: 20px;
+  background-color: var(--white);
+  display: grid;
+  grid-template-columns: 1fr 1fr 1.5fr;
+  grid-template-rows: 2rem 1fr 1fr 1fr;
+  padding: 1rem;
+  transition: var(--transition-300);
+}
+.generalInformationsContainer:hover {
+  transform: scale(1.01);
+}
+
+.generalInformationsContainer :where(p, span) {
+  font-size: 0.8rem;
+  cursor: pointer;
+}
+.generalInformationsContainer p {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+
+.generalInformationsContainer p:nth-of-type(1) {
+  border-bottom: 2px solid var(--gray-900);
+  border-right: 2px solid var(--gray-900);
+  justify-self: center;
+}
+.generalInformationsContainer p:nth-of-type(2) {
+  border-bottom: 2px solid var(--gray-900);
+}
+.generalInformationsContainer p:nth-of-type(3) {
+  border-bottom: 2px solid var(--gray-900);
+  border-left: 2px solid var(--gray-900);
+}
+.generalInformationsContainer p:nth-of-type(4) {
+  grid-column: 1/4;
+  justify-content: flex-start;
+  font-weight: 500;
+  border-bottom: 2px solid var(--gray-900);
+}
+
+.generalInformationsContainer p:nth-of-type(4) span {
+  font-weight: 500;
+  color: var(--blue-100);
+  margin-left: 1rem;
+}
+.generalInformationsContainer p:nth-of-type(5) {
+  grid-column: 1/4;
+  justify-content: flex-start;
+  font-weight: 500;
+  border-bottom: 2px solid var(--gray-900);
+}
+.generalInformationsContainer p:nth-of-type(6) {
+  grid-column: 1/4;
+  justify-content: flex-start;
+  font-weight: 500;
+}
+.discountContainer {
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  padding: 0.6rem;
+  gap: 1rem;
+}
+
+.discountContainer input {
+  border-radius: 10px;
+  border: 2px solid var(--gray-800);
+  outline: none;
+  padding-left: 0.5rem;
+  font-size: 0.8rem;
+  font-weight: 500;
+}
+
+.discountContainer button {
+  border-radius: 10px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  background-color: var(--blue-100);
+  color: var(--white);
+  font-size: 0.8rem;
+  transition: var(--transition-300);
+}
+.discountContainer button:hover {
+  background-color: var(--white);
+  color: var(--blue-100);
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+.totalPriceContainer {
+  border-radius: 20px;
+  background-color: var(--white);
+  padding: 1rem;
+  display: grid;
+  /* flex-direction: column;
+  align-items: stretch;
+  justify-content: flex-start; */
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 2fr 2fr 2fr 3fr;
+  /* gap: 1rem; */
+}
+.totalPriceContainer p {
+  font-size: 0.9rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  height: 100%;
+}
+.totalPriceContainer p:nth-of-type(2),
+.totalPriceContainer p:nth-of-type(4) {
+  border-bottom: 2px solid var(--gray-800);
+  margin-top: 0.2rem;
+}
+.totalPriceContainer p:nth-of-type(3) {
+  align-self: flex-end;
+  align-items: flex-end;
+}
+
+.totalPriceContainer p:last-of-type {
+  align-self: center;
+  font-size: 1rem;
+  font-weight: 500;
+  align-items: center;
+}
+.totalPriceContainer span {
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+/* ///////////////////////////////////////////////////////////////////////////////////// */
+/* ///////////////////////////////////////////////////////////////////////////////////// */
+/* ///////////////////////////////////////////////////////////////////////////////////// */
+/* ///////////////////////////////////////////////////////////////////////////////////// */
+/* ///////////////////////////////////////////////////////////////////////////////////// */
+.placeOrder {
+  width: 10rem;
+  height: 3.5rem;
+  margin: 1rem 0;
+  border-radius: 10px;
+  outline: none;
+  border: none;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--blue-100);
+  font-weight: 600;
+  color: var(--white);
+  animation-name: slideUp;
+  animation-duration: 500ms;
+}
+.placeOrder a {
+  color: var(--white);
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+@keyframes slideUp {
+  0% {
+    transform: translateY(1rem);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+@keyframes slideDown {
+  0% {
+    transform: translateY(-1rem);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+@keyframes slideRight {
+  0% {
+    transform: translateX(1em);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+@keyframes slideLeft {
+  0% {
+    transform: translateX(-1em);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@media (max-width: 1000px) {
+  .discountContainer {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 0.2rem;
+  }
+  .billingDetailsContainer {
+    grid-template-rows: 20rem 7rem 13rem 6rem;
+  }
+  .generalInformationsContainer {
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(6, 1fr);
+  }
+
+  .generalInformationsContainer p:nth-of-type(1),
+  .generalInformationsContainer p:nth-of-type(2),
+  .generalInformationsContainer p:nth-of-type(3) {
+    border: none;
+    grid-column: 1/2;
+  }
+  .billingDetails {
+    padding: 1rem;
+  }
+}
+
+@media (max-width: 850px) {
+  .paymentBilling {
+    grid-template-columns: 1fr;
+    grid-template-rows: max-content max-content;
+  }
+
+  .billingDetails {
+    align-items: center;
+    overflow-y: hidden;
+  }
+
+  .billingDetailsContainer {
+    width: 55%;
+  }
+}
+@media (max-width: 750px) {
+  .billingDetailsContainer {
+    width: 75%;
+  }
+}
+@media (max-width: 650px) {
+  .paymentDetailsContainer {
+    width: 90%;
+  }
+  .billingDetailsContainer {
+    width: 85%;
+  }
+}
+
+@media (max-width: 500px) {
+  .paymentDetailsContainer {
+    width: 95%;
+    grid-template-rows: 2fr 1fr 2fr 1fr;
+  }
+
+  .creditCardInformations .paymentDetailsContainerInput:nth-child(1) {
+    grid-column: 1/3;
+  }
+  .creditCardInformations {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    row-gap: 1rem;
+  }
+
+  .phoneNumberContactWaysContainer {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 1rem;
+  }
+  .billingDetailsContainer {
+    width: 95%;
+  }
+}

@@ -1,0 +1,430 @@
+:root {
+  --black: #000;
+  --white: #fff;
+
+  --blue-100: #1a78f2;
+  --blue-90: #6896d1;
+
+  --neutral-100: #12153a;
+  --neutral-200: #2b3641;
+  --neutral-300: #4f6071;
+  --neutral-400: #677582;
+  --neutral-500: #88939d;
+
+  --gray-600: #9fa7af;
+  --gray-700: #bcc2c8;
+  --gray-800: #d3d8dd;
+  --gray-900: #eaeef3;
+  --gray-950: #f4f7f9;
+
+  --transition-300: all 300ms ease;
+  --transition-500: all 500ms ease;
+}
+
+.frequency {
+  min-height: 50vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 2rem;
+  padding-bottom: 3rem;
+  padding-top: 2rem;
+}
+
+.frequencyPart,
+.addressPart,
+.howToGetInPart,
+.petsPart {
+  min-width: 60%;
+  min-height: 15rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.addressPart {
+  width: 70%;
+  min-height: 10rem;
+}
+.frequencyPart > h2:first-child,
+.addressPart > h2:first-child {
+  font-size: 1.8rem;
+  animation: slideDown 500ms ease;
+}
+
+.frequencyPart > span:first-of-type,
+.addressPart > span:first-of-type {
+  font-size: 0.9rem;
+  margin: 0.3rem 0;
+  color: var(--neutral-500);
+  animation: slideDown 500ms ease;
+  text-align: center;
+}
+
+.frequencyPartContainer {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 2fr;
+  row-gap: 0.3rem;
+  justify-items: center;
+
+  width: 100%;
+  animation: slideUp 500ms;
+  margin-top: 2rem;
+}
+
+.frequencyPartContainer > span:first-of-type,
+.howToGetInPart > span:first-of-type,
+.petsPart > span:first-of-type,
+.petsPartInputs label {
+  font-size: 0.9rem;
+  color: var(--gray-600);
+  align-self: center;
+  /* margin: 0.6rem 0; */
+}
+
+.frequencyPartContainer .container,
+.howToGetInPartContainer {
+  width: inherit;
+
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+.frequencyPartContainer .container button,
+.howToGetInPartContainer button,
+.petsButton {
+  min-width: 5rem;
+  height: 3rem;
+  min-width: fit-content;
+  padding: 0 2rem;
+  height: 3rem;
+  font-size: 0.9rem;
+  color: var(--neutral-300);
+  border-radius: 5px;
+  border: 2px solid var(--gray-800);
+  background: none;
+  cursor: pointer;
+  font-weight: 500;
+  transition: var(--transition-300);
+}
+.frequencyPartDiv {
+  height: 100%;
+  width: max-content;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: var(--transition-300);
+  cursor: pointer;
+  animation-name: slideUp;
+  animation-duration: 500;
+}
+.frequencyPartDi .frequencyPartDiv:hover {
+  transform: translateY(-0.2rem);
+}
+.frequencyPartDiv:hover button {
+  color: var(--blue-100);
+  border-color: var(--blue-100);
+}
+
+.frequencyPartDiv span:last-of-type {
+  font-size: 0.7rem;
+  margin-top: 1rem;
+  color: var(--neutral-500);
+  transition: var(--transition-500);
+}
+.frequencyPartDiv:hover span:last-of-type {
+  transform: scale(1.3);
+  color: var(--blue-100);
+}
+
+.addressPartContainer {
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  grid-template-rows: 1fr;
+  min-height: 3rem;
+  margin-top: 1rem;
+  column-gap: 1rem;
+  animation: slideUp 500ms;
+}
+
+.addressPartContainer div {
+  width: 100%;
+
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.addressPartContainer div label {
+  color: var(--gray-600);
+  font-size: 0.7rem;
+}
+
+.addressPartContainer div input,
+.petsPartInputs input,
+.petsPartInputs textarea {
+  width: 100%;
+  height: 3rem;
+  border-radius: 10px;
+  border: 2px solid var(--gray-800);
+  padding-left: 0.5rem;
+  outline: none;
+  font-size: 0.9rem;
+  color: var(--neutral-300);
+  font-weight: 500;
+}
+
+.addressPartContainer div input::placeholder,
+.petsPartInputs input::placeholder,
+.petsPartInputs textarea::placeholder {
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: var(--gray-700);
+}
+
+.addressPartContainer div input:focus,
+.howToGetInOthersTab input:focus,
+.petsPartInputs input:focus,
+.petsPartInputs textarea:focus {
+  border-color: var(--blue-100);
+}
+
+.howToGetInPart {
+  min-height: 5rem;
+}
+
+.howToGetInPartContainer {
+  width: 100%;
+  height: 3rem;
+  margin-top: 1rem;
+  gap: 1rem;
+}
+
+.howToGetInPartContainer button:hover,
+.petsButton:hover {
+  color: var(--blue-100);
+  border-color: var(--blue-100);
+  transform: translateY(-0.1rem);
+}
+
+.howToGetInOthersTab {
+  min-height: 5rem;
+  margin-top: 2rem;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  animation: slideDown 300ms ease;
+}
+
+.howToGetInOthersTab label {
+  font-size: 0.9rem;
+  color: var(--gray-600);
+}
+.howToGetInOthersTab input {
+  width: 100%;
+  height: 3rem;
+  border-radius: 10px;
+  border: 2px solid var(--gray-800);
+  padding-left: 0.5rem;
+  outline: none;
+  font-size: 0.9rem;
+  color: var(--neutral-300);
+  font-weight: 500;
+}
+
+.petsPart {
+  gap: 1rem;
+  min-height: 5rem;
+  width: 20rem;
+}
+
+.yesNoPets {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+
+  width: 30%;
+  height: fit-content;
+  gap: 0.5rem;
+}
+
+.petsPartInputs {
+  width: 80%;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: stretch;
+  gap: 1rem;
+  animation: slideDown 500ms ease;
+}
+
+.petsPartInputs input {
+  width: 100%;
+
+  height: 3rem;
+}
+.petsPartInputs :where(input, textarea) {
+  outline: none;
+  border-radius: 10px;
+  padding: 1rem;
+  border: 2px solid var(--gray-800);
+}
+
+.petsPartInputs div:last-child label {
+  align-self: flex-start;
+}
+
+.petsPartInputs div:last-child {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.petsPartInputs textarea {
+  max-width: 100%;
+  min-width: 100%;
+  min-height: 5rem;
+  max-height: 5rem;
+}
+
+.nextButton {
+  width: 10rem;
+  height: 3.5rem;
+  margin: 1rem 0;
+  border-radius: 10px;
+  outline: none;
+  border: none;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--blue-100);
+  font-weight: 600;
+  color: var(--white);
+  animation-name: slideUp;
+  animation-duration: 500ms;
+}
+
+.nextButton a {
+  color: var(--white);
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+@keyframes slideUp {
+  0% {
+    transform: translateY(1rem);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+@keyframes slideDown {
+  0% {
+    transform: translateY(-1rem);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+@keyframes slideRight {
+  0% {
+    transform: translateX(-2rem);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@media (max-width: 750px) {
+  /* .frequency {
+    margin-top: 6rem;
+  } */
+
+  .addressPart {
+    width: 90%;
+  }
+}
+
+@media (max-width: 670px) {
+  .frequencyPart {
+    padding: 1rem;
+  }
+  .frequencyPartContainer .container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+  }
+
+  .addressPartContainer {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr;
+    width: 100%;
+    gap: 0.5rem;
+  }
+
+  .addressPartContainer div:nth-child(2) {
+    width: 50%;
+  }
+
+  .howToGetInPartContainer {
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    height: fit-content;
+    padding: 1rem;
+  }
+  .howToGetInOthersTab {
+    width: 100%;
+    padding: 1rem;
+  }
+  .petsPartInputs {
+    width: 100%;
+  }
+}
+
+@media (max-width: 500px) {
+  .frequencyPart > span:first-of-type,
+  .addressPart > span:first-of-type {
+    text-align: left;
+  }
+  .frequencyPart > h2:first-of-type,
+  .addressPart > h2:first-of-type {
+    text-align: left;
+    align-self: flex-start;
+  }
+}
+
+@media (max-width: 405px) {
+  .frequencyPartContainer {
+    grid-template-rows: min-content 1fr;
+    row-gap: 1rem;
+  }
+
+  .frequencyPartContainer .container {
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(4, 1fr);
+    justify-items: center;
+  }
+}

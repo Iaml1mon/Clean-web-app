@@ -1,0 +1,152 @@
+:root {
+  --black: #000;
+  --white: #fff;
+
+  --blue-100: #1a78f2;
+  --blue-90: #6896d1;
+  --blue-80: #afbbff7c;
+
+  --neutral-100: #12153a;
+  --neutral-200: #2b3641;
+  --neutral-300: #4f6071;
+  --neutral-400: #677582;
+  --neutral-500: #88939d;
+
+  --gray-600: #9fa7af;
+  --gray-700: #bcc2c8;
+  --gray-800: #d3d8dd;
+  --gray-900: #eaeef3;
+  --gray-950: #f4f7f9;
+
+  --transition-300: all 300ms ease;
+  --transition-500: all 500ms ease;
+}
+
+.requirement {
+  width: 100%;
+  min-height: 80%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 3rem;
+  padding-top: 2rem;
+}
+
+.requirement > h2:first-child {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+  animation: slideDown 500ms ease;
+}
+
+.requirement .mainDiv {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: fit-content;
+}
+
+.requirement .mainDiv span:first-of-type {
+  font-size: 0.8rem;
+  color: var(--gray-600);
+  margin: 0.6rem 0;
+}
+
+.requirement .container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 1rem;
+  min-height: 3.5rem;
+}
+.requirement .button {
+  min-width: 4rem;
+  padding: 0 2rem;
+  height: 3rem;
+  font-size: 0.9rem;
+  color: var(--neutral-300);
+  border-radius: 5px;
+  border: 2px solid var(--gray-800);
+  background: none;
+  cursor: pointer;
+  font-weight: 500;
+  transition: var(--transition-300);
+  animation: slideUp 300ms ease;
+}
+
+.requirement .button:hover {
+  border-color: var(--blue-100) !important;
+  color: var(--blue-100) !important;
+  /* background-color: var(--blue-80); */
+  transform: translateY(-0.2rem);
+}
+
+.nextButton {
+  width: 10rem;
+  height: 3.5rem;
+  margin: 1rem 0;
+  border-radius: 10px;
+  outline: none;
+  border: none;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--blue-100);
+  font-weight: 600;
+  color: var(--white);
+  animation-name: slideUp;
+  animation-duration: 500ms;
+}
+.nextButton a {
+  color: var(--white);
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+@keyframes slideUp {
+  0% {
+    transform: translateY(1rem);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+@keyframes slideDown {
+  0% {
+    transform: translateY(-1rem);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@media (max-width: 750px) {
+  .requirement {
+    align-items: flex-start;
+    padding: 0 1rem 3rem 1rem;
+  }
+
+  .requirement > h2:first-child {
+    align-self: center;
+    font-size: 1.5rem;
+  }
+
+  .requirement .mainDiv {
+    align-items: flex-start;
+  }
+
+  .requirement .nextButton {
+    align-self: center;
+  }
+}
