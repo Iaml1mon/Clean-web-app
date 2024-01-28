@@ -556,6 +556,9 @@ function TotalPriceContainer() {
 // __________________________________________________________
 
 function PaymentBilling() {
+  window.addEventListener("load", () => {
+    window.scrollTo(0, 0);
+  });
   return (
     <div className={styles.paymentBilling}>
       <PaymentDetails />
