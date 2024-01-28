@@ -3,8 +3,7 @@ import styles from "./DateBooking.module.css";
 import { useContext, useState } from "react";
 import { BookingStepsContext } from "./BookingStepsContext";
 import Calendar from "react-calendar";
-import "react-calendar/dist/Calendar.css";
-
+import "./Calendar.css";
 function CalendarComp() {
   const [date, setDate] = useState("");
   return <div>{date}</div>;
