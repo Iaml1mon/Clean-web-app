@@ -1,6 +1,6 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import styles from "./PaymentBilling.module.css";
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { BookingStepsContext } from "./BookingStepsContext";
 import { CheckBox } from "@mui/icons-material";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -556,9 +556,21 @@ function TotalPriceContainer() {
 // __________________________________________________________
 
 function PaymentBilling() {
-  window.addEventListener("load", () => {
+  const { state, dispatch } = useContext(BookingStepsContext);
+  // window.addEventListener("load", () => {
+  //   window.scrollTo(0, 0);
+  // });
+  const navigate = useNavigate();
+  useEffect(() => {
+    const redirectToLogin = () => {
+      navigate("/details/requirements");
+    };
+
     window.scrollTo(0, 0);
-  });
+
+    if (!state.bedrooms || !state.bathrooms || !state.cleaningType)
+      redirectToLogin();
+  }, []);
   return (
     <div className={styles.paymentBilling}>
       <PaymentDetails />

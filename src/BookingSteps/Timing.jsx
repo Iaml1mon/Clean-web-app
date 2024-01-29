@@ -1,8 +1,8 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import styles from "./Timing.module.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowLeft, faArrowRight } from "@fortawesome/free-solid-svg-icons";
-import { useContext, useState } from "react";
+import { useContext, useEffect, useRef, useState } from "react";
 import { BookingStepsContext } from "./BookingStepsContext";
 import { House } from "@mui/icons-material";
 
@@ -152,12 +152,20 @@ function HoursSlider() {
 
 function Timing() {
   const { state, dispatch } = useContext(BookingStepsContext);
+  const navigate = useNavigate();
+  useEffect(() => {
+    const redirectToLogin = () => {
+      navigate("/details/requirements");
+    };
 
+    if (!state.bedrooms || !state.bathrooms || !state.cleaningType)
+      redirectToLogin();
+  }, []);
   return (
     <div className={styles.timing}>
       <h2>Book Timing</h2>
       <span>Save even more by booking off-peak dates and times.</span>
-      <div className={styles.timingContainer}>
+      <div className={styles.timingContainer} id="timingContainer">
         <HoursSlider />
       </div>
       {state.timing && (

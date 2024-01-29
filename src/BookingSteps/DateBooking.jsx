@@ -1,6 +1,6 @@
-import { Link } from "react-router-dom";
+import { Link, Navigate, useNavigate } from "react-router-dom";
 import styles from "./DateBooking.module.css";
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { BookingStepsContext } from "./BookingStepsContext";
 import Calendar from "react-calendar";
 import "./Calendar.css";
@@ -27,6 +27,19 @@ function DateBooking() {
     dispatch({ type: "setDate", payload: cleaningDate });
     dispatch({ type: "setFormalDate", payload: date });
   };
+  // useEffect(() => {
+  //   if (state.bedrooms === "") Navigate("/details/requirements");
+  // }, [state.bedrooms]);
+
+  const navigate = useNavigate();
+  useEffect(() => {
+    const redirectToLogin = () => {
+      navigate("/details/requirements");
+    };
+
+    if (!state.bedrooms || !state.bathrooms || !state.cleaningType)
+      redirectToLogin();
+  }, []);
 
   return (
     <div className={styles.dateBooking}>

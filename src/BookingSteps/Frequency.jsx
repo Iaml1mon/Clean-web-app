@@ -1,6 +1,6 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import styles from "./Frequency.module.css";
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { BookingStepsContext } from "./BookingStepsContext";
 
 function FrequencyPartDiv({
@@ -378,6 +378,16 @@ function Frequency() {
   window.addEventListener("load", () => {
     window.scrollTo(0, 0);
   });
+
+  const navigate = useNavigate();
+  useEffect(() => {
+    const redirectToLogin = () => {
+      navigate("/details/requirements");
+    };
+
+    if (!state.bedrooms || !state.bathrooms || !state.cleaningType)
+      redirectToLogin();
+  }, []);
   return (
     <div className={styles.frequency}>
       <FrequencyPart />
