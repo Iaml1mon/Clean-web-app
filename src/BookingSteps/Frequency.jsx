@@ -379,15 +379,6 @@ function Frequency() {
     window.scrollTo(0, 0);
   });
 
-  const navigate = useNavigate();
-  useEffect(() => {
-    const redirectToLogin = () => {
-      navigate("/details/requirements");
-    };
-
-    if (!state.bedrooms || !state.bathrooms || !state.cleaningType)
-      redirectToLogin();
-  }, []);
   return (
     <div className={styles.frequency}>
       <FrequencyPart />

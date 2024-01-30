@@ -20,24 +20,81 @@ import DateBooking from "./BookingSteps/DateBooking";
 import Timing from "./BookingSteps/Timing";
 import Frequency from "./BookingSteps/Frequency";
 import PaymentBilling from "./BookingSteps/PaymentBilling";
+import { BookingStepsContext } from "./BookingSteps/BookingStepsContext";
+
+const ErrorPage = () => {
+  return <LandingPage />;
+};
+
+// const router = createBrowserRouter([
+//   {
+//     path: "/",
+//     element: <LandingPage />,
+//   },
+//   {
+//     path: "/details",
+//     element: <MainInterface />,
+//     errorElement: <ErrorPage />,
+//     children: {
+//       path: "/requirement",
+//       element: <Requirement />,
+//     },
+//     {
+//       path: '/date' ,
+
+//     }
+//   },
+// ]);
 
 function App() {
+  const { state, dispatch } = useContext(BookingStepsContext);
   return (
     <div id="appContainer">
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<LandingPage />} />
-          <Route path="/details/" element={<MainInterface />}>
-            <Route path="/details/requirements" element={<Requirement />} />
-            <Route path="/details/date" element={<DateBooking />} />
-            <Route path="/details/timing" element={<Timing />} />
-            <Route path="/details/frequency" element={<Frequency />} />
+          <Route path="/details" element={<MainInterface />}>
+            <Route path="requirements" element={<Requirement />} />
             <Route
-              path="/details/payment-billing"
-              element={<PaymentBilling />}
+              path="date"
+              element={
+                !state.bedrooms || !state.bathrooms || !state.cleaningType ? (
+                  <Navigate to="/details/requirements" />
+                ) : (
+                  <DateBooking />
+                )
+              }
             />
-
-            {/* <Redirect to="/details/requirements" /> */}
+            <Route
+              path="timing"
+              element={
+                !state.bedrooms || !state.bathrooms || !state.cleaningType ? (
+                  <Navigate to="/details/requirements" />
+                ) : (
+                  <Timing />
+                )
+              }
+            />
+            <Route
+              path="frequency"
+              element={
+                !state.bedrooms || !state.bathrooms || !state.cleaningType ? (
+                  <Navigate to="/details/requirements" />
+                ) : (
+                  <Frequency />
+                )
+              }
+            />
+            <Route
+              path="payment-billing"
+              element={
+                !state.bedrooms || !state.bathrooms || !state.cleaningType ? (
+                  <Navigate to="/details/requirements" />
+                ) : (
+                  <PaymentBilling />
+                )
+              }
+            />
           </Route>
         </Routes>
       </BrowserRouter>

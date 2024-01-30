@@ -27,19 +27,6 @@ function DateBooking() {
     dispatch({ type: "setDate", payload: cleaningDate });
     dispatch({ type: "setFormalDate", payload: date });
   };
-  // useEffect(() => {
-  //   if (state.bedrooms === "") Navigate("/details/requirements");
-  // }, [state.bedrooms]);
-
-  const navigate = useNavigate();
-  useEffect(() => {
-    const redirectToLogin = () => {
-      navigate("/details/requirements");
-    };
-
-    if (!state.bedrooms || !state.bathrooms || !state.cleaningType)
-      redirectToLogin();
-  }, []);
 
   return (
     <div className={styles.dateBooking}>

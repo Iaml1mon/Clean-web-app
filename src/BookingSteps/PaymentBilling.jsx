@@ -557,20 +557,7 @@ function TotalPriceContainer() {
 
 function PaymentBilling() {
   const { state, dispatch } = useContext(BookingStepsContext);
-  // window.addEventListener("load", () => {
-  //   window.scrollTo(0, 0);
-  // });
-  const navigate = useNavigate();
-  useEffect(() => {
-    const redirectToLogin = () => {
-      navigate("/details/requirements");
-    };
 
-    window.scrollTo(0, 0);
-
-    if (!state.bedrooms || !state.bathrooms || !state.cleaningType)
-      redirectToLogin();
-  }, []);
   return (
     <div className={styles.paymentBilling}>
       <PaymentDetails />

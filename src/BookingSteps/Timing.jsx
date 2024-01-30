@@ -152,15 +152,6 @@ function HoursSlider() {
 
 function Timing() {
   const { state, dispatch } = useContext(BookingStepsContext);
-  const navigate = useNavigate();
-  useEffect(() => {
-    const redirectToLogin = () => {
-      navigate("/details/requirements");
-    };
-
-    if (!state.bedrooms || !state.bathrooms || !state.cleaningType)
-      redirectToLogin();
-  }, []);
   return (
     <div className={styles.timing}>
       <h2>Book Timing</h2>
