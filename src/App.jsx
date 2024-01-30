@@ -54,7 +54,11 @@ function App() {
         <Routes>
           <Route path="/" element={<LandingPage />} />
           <Route path="/details" element={<MainInterface />}>
-            <Route path="requirements" element={<Requirement />} />
+            <Route
+              path="requirements"
+              element={<Requirement />}
+              errorElement={<ErrorPage />}
+            />
             <Route
               path="date"
               element={
@@ -64,6 +68,7 @@ function App() {
                   <DateBooking />
                 )
               }
+              errorElement={<ErrorPage />}
             />
             <Route
               path="timing"
@@ -74,6 +79,7 @@ function App() {
                   <Timing />
                 )
               }
+              errorElement={<ErrorPage />}
             />
             <Route
               path="frequency"
@@ -84,6 +90,7 @@ function App() {
                   <Frequency />
                 )
               }
+              errorElement={<ErrorPage />}
             />
             <Route
               path="payment-billing"
@@ -94,6 +101,7 @@ function App() {
                   <PaymentBilling />
                 )
               }
+              errorElement={<ErrorPage />}
             />
           </Route>
         </Routes>
