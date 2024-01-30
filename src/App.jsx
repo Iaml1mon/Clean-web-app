@@ -61,6 +61,39 @@ function App() {
             />
             <Route
               path="date"
+              element={<DateBooking />}
+              errorElement={<ErrorPage />}
+            />
+            <Route
+              path="timing"
+              element={<Timing />}
+              errorElement={<ErrorPage />}
+            />
+            <Route
+              path="frequency"
+              element={<Frequency />}
+              errorElement={<ErrorPage />}
+            />
+            <Route
+              path="payment-billing"
+              element={<PaymentBilling />}
+              errorElement={<ErrorPage />}
+            />
+          </Route>
+        </Routes>
+      </BrowserRouter>
+
+      {/* <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<LandingPage />} />
+          <Route path="/details" element={<MainInterface />}>
+            <Route
+              path="requirements"
+              element={<Requirement />}
+              errorElement={<ErrorPage />}
+            />
+            <Route
+              path="date"
               element={
                 !state.bedrooms || !state.bathrooms || !state.cleaningType ? (
                   <Navigate to="/details/requirements" />
@@ -105,7 +138,7 @@ function App() {
             />
           </Route>
         </Routes>
-      </BrowserRouter>
+      </BrowserRouter> */}
     </div>
   );
 }
@@ -117,21 +150,21 @@ function App() {
 // function App() {
 //   return (
 //     <div id="appContainer">
-//       <BrowserRouter>
-//         <Routes>
-//           <Route path="/" element={<LandingPage />} />
-//           <Route path="/details/" element={<MainInterfacce />}>
-//             <Route path="/details/requirements" element={<Requirement />} />
-//             <Route path="/details/date" element={<DateBooking />} />
-//             <Route path="/details/timing" element={<Timing />} />
-//             <Route path="/details/frequency" element={<Frequency />} />
-//             <Route
-//               path="/details/payment-billing"
-//               element={<PaymentBilling />}
-//             />
-//           </Route>
-//         </Routes>
-//       </BrowserRouter>
+// <BrowserRouter>
+//   <Routes>
+//     <Route path="/" element={<LandingPage />} />
+//     <Route path="/details/" element={<MainInterfacce />}>
+//       <Route path="/details/requirements" element={<Requirement />} />
+//       <Route path="/details/date" element={<DateBooking />} />
+//       <Route path="/details/timing" element={<Timing />} />
+//       <Route path="/details/frequency" element={<Frequency />} />
+//       <Route
+//         path="/details/payment-billing"
+//         element={<PaymentBilling />}
+//       />
+//     </Route>
+//   </Routes>
+// </BrowserRouter>
 //     </div>
 //   );
 // }
