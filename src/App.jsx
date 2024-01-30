@@ -50,7 +50,7 @@ function App() {
   const { state, dispatch } = useContext(BookingStepsContext);
   return (
     <div id="appContainer">
-      <BrowserRouter>
+      {/* <BrowserRouter>
         <Routes>
           <Route path="/" element={<LandingPage />} />
           <Route path="/details" element={<MainInterface />}>
@@ -81,9 +81,9 @@ function App() {
             />
           </Route>
         </Routes>
-      </BrowserRouter>
+      </BrowserRouter> */}
 
-      {/* <BrowserRouter>
+      <BrowserRouter>
         <Routes>
           <Route path="/" element={<LandingPage />} />
           <Route path="/details" element={<MainInterface />}>
@@ -138,7 +138,7 @@ function App() {
             />
           </Route>
         </Routes>
-      </BrowserRouter> */}
+      </BrowserRouter>
     </div>
   );
 }
