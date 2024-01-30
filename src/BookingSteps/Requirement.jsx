@@ -72,6 +72,10 @@ function BedroomsNumber() {
       isChosen: false,
     },
     {
+      buttonName: "7",
+      isChosen: false,
+    },
+    {
       buttonName: "8",
       isChosen: false,
     },
