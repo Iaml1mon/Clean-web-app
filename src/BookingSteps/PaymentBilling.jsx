@@ -169,7 +169,9 @@ function PaymentDetailsContainerInput({
       ? (setWarningColor("#1a78f2"),
         setWarningMessage("valid card number"),
         setRightInput(true))
-      : (setWarningColor("red"), setRightInput(false));
+      : (setWarningColor("red"),
+        setRightInput(false),
+        setWarningMessage("invalid card number"));
     dispatch({
       type: actionType,
       payload: formatedText,
