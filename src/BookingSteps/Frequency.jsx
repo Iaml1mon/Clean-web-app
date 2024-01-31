@@ -375,9 +375,10 @@ function PetsPart() {
 
 function Frequency() {
   const { state, dispatch } = useContext(BookingStepsContext);
-  window.addEventListener("load", () => {
+
+  const scroll = () => {
     window.scrollTo(0, 0);
-  });
+  };
 
   return (
     <div className={styles.frequency}>

@@ -26,7 +26,7 @@ import {
 function BookingDetailsComponent({ title, icon, chosen, path }) {
   // const [state, setState] = useState(initialState);
   return (
-    <Link to={path} className={styles.bookingDetailsComponent}>
+    <div className={styles.bookingDetailsComponent}>
       <span>
         <FontAwesomeIcon
           icon={icon}
@@ -35,7 +35,7 @@ function BookingDetailsComponent({ title, icon, chosen, path }) {
       </span>
       <p>{chosen}</p>
       <p>{title}</p>
-    </Link>
+    </div>
   );
 }
 
@@ -86,7 +86,7 @@ function Header() {
         <BookingDetailsComponent
           title="ADDRESS"
           icon={faLocationDot}
-          chosen="eddis , Msila"
+          chosen={state.address}
         />
         <BookingDetailsComponentTotalPrice />
         {/* </div> */}
